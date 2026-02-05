@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pizza extends Prodotto {
-    private List<Ingrediente> ingrediente = new ArrayList<>();
+    private List<String> ingrediente = new ArrayList<>();
 
     public Pizza(String name, int calories, double price) {
         super(name, calories, price);
     }
 
-    public List<Ingrediente> getIngrediente() {
+    public List<String> getIngrediente() {
         return ingrediente;
     }
 
-    public void setIngrediente(List<Ingrediente> ingrediente) {
+    public void setIngrediente(List<String> ingrediente) {
         this.ingrediente = ingrediente;
     }
 
-    public void addIngrediente(Ingrediente ingrediente) {
+    public void addIngrediente(String ingrediente) {
         this.ingrediente.add(ingrediente);
     }
 

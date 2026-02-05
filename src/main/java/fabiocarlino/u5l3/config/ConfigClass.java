@@ -62,8 +62,8 @@ public class ConfigClass {
     public Pizza margherita() {
         Pizza pizza = new Pizza("margherita", 1104, 4.99);
 
-        pizza.addIngrediente(pomodoro());
-        pizza.addIngrediente(mozzarella());
+        pizza.addIngrediente(pomodoro().getName());
+        pizza.addIngrediente(mozzarella().getName());
 
         return pizza;
     }
@@ -71,21 +71,20 @@ public class ConfigClass {
     @Bean
     public Pizza hawaiana() {
         Pizza pizza = new Pizza("hawaiana", 1024, 6.49);
-        pizza.addIngrediente(pomodoro());
-        pizza.addIngrediente(mozzarella());
-        pizza.addIngrediente(prosciutto());
-        pizza.addIngrediente(ananas());
+        pizza.addIngrediente(pomodoro().getName());
+        pizza.addIngrediente(mozzarella().getName());
+        pizza.addIngrediente(prosciutto().getName());
+        pizza.addIngrediente(ananas().getName());
 
         return pizza;
     }
 
     @Bean(name = "salami")
     public Pizza salami() {
-        List<Ingrediente> ingredienti = new ArrayList<>();
         Pizza pizza = new Pizza("salami", 1160, 5.99);
-        pizza.addIngrediente(pomodoro());
-        pizza.addIngrediente(mozzarella());
-        pizza.addIngrediente(salame());
+        pizza.addIngrediente(pomodoro().getName());
+        pizza.addIngrediente(mozzarella().getName());
+        pizza.addIngrediente(salame().getName());
 
         return pizza;
     }
@@ -103,9 +102,9 @@ public class ConfigClass {
     public Menu menu() {
         List<Pizza> pizze = new ArrayList<>();
 
-//        pizze.add(hawaiana());
+        pizze.add(hawaiana());
         pizze.add(margherita());
-//        pizze.add(salami());
+        pizze.add(salami());
 
         List<Ingrediente> ingredienti = new ArrayList<>();
 
