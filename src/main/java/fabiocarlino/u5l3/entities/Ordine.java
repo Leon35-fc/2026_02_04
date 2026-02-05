@@ -1,6 +1,7 @@
 package fabiocarlino.u5l3.entities;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -19,6 +20,7 @@ public class Ordine {
         if (numeroCoperti > tavolo.getMaxCoperti())
             throw new RuntimeException("Numero coperti maggiore di numero massimo posti sul tavolo!");
         this.numeroCoperti = numeroCoperti;
+        this.prodottoList = new ArrayList<>();
         this.statoOrdine = statoOrdine;
         this.tavolo = tavolo;
         this.fissoCoperto = fissoCoperto;
@@ -26,10 +28,6 @@ public class Ordine {
 
     public int getIdOrdine() {
         return idOrdine;
-    }
-
-    public void setIdOrdine(int idOrdine) {
-        this.idOrdine = idOrdine;
     }
 
     public Tavolo getTavolo() {
@@ -56,7 +54,7 @@ public class Ordine {
         this.prodottoList = prodottoList;
     }
 
-    public void addProdottoList(Prodotto prodotto) {
+    public void addProdotto(Prodotto prodotto) {
         this.prodottoList.add(prodotto);
     }
 

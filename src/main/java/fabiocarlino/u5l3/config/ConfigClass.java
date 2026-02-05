@@ -58,12 +58,8 @@ public class ConfigClass {
         return new Ingrediente("pomodoro", 0, 0.99);
     }
 
-    @Bean
+    @Bean(name = "margherita")
     public Pizza margherita() {
-//        List<Ingrediente> ingredienti = new ArrayList<>();
-//        ingredienti.add(pomodoro());
-//        ingredienti.add(mozzarella());
-
         Pizza pizza = new Pizza("margherita", 1104, 4.99);
 
         pizza.addIngrediente(pomodoro());
@@ -72,24 +68,27 @@ public class ConfigClass {
         return pizza;
     }
 
-//    @Bean
-//    public Pizza hawaiana() {
-//        List<Ingrediente> ingredienti = new ArrayList<>();
-//        ingredienti.add(pomodoro());
-//        ingredienti.add(mozzarella());
-//        ingredienti.add(prosciutto());
-//        ingredienti.add(ananas());
-//        return new Pizza("hawaiana", 1024, 6.49, ingredienti);
-//    }
-//
-//    @Bean
-//    public Pizza salami() {
-//        List<Ingrediente> ingredienti = new ArrayList<>();
-//        ingredienti.add(pomodoro());
-//        ingredienti.add(mozzarella());
-//        ingredienti.add(salame());
-//        return new Pizza("salami", 1160, 5.99, ingredienti);
-//    }
+    @Bean
+    public Pizza hawaiana() {
+        Pizza pizza = new Pizza("hawaiana", 1024, 6.49);
+        pizza.addIngrediente(pomodoro());
+        pizza.addIngrediente(mozzarella());
+        pizza.addIngrediente(prosciutto());
+        pizza.addIngrediente(ananas());
+
+        return pizza;
+    }
+
+    @Bean(name = "salami")
+    public Pizza salami() {
+        List<Ingrediente> ingredienti = new ArrayList<>();
+        Pizza pizza = new Pizza("salami", 1160, 5.99);
+        pizza.addIngrediente(pomodoro());
+        pizza.addIngrediente(mozzarella());
+        pizza.addIngrediente(salame());
+
+        return pizza;
+    }
 
 //    @Bean
 //    public Ordine ordine() {
